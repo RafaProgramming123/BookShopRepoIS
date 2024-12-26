@@ -3173,11 +3173,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Service\\EShop.Service.csproj",
+      "projectUniqueName": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Service\\EShop.Service.csproj",
       "projectName": "EShop.Service",
-      "projectPath": "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Service\\EShop.Service.csproj",
+      "projectPath": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Service\\EShop.Service.csproj",
       "packagesPath": "C:\\Users\\Guest1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Service\\obj\\",
+      "outputPath": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Guest1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3194,11 +3194,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Domain\\EShop.Domain.csproj": {
-              "projectPath": "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Domain\\EShop.Domain.csproj"
+            "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Domain\\EShop.Domain.csproj": {
+              "projectPath": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Domain\\EShop.Domain.csproj"
             },
-            "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Repository\\EShop.Repository.csproj": {
-              "projectPath": "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Repository\\EShop.Repository.csproj"
+            "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Repository\\EShop.Repository.csproj": {
+              "projectPath": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Repository\\EShop.Repository.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3jXUBEx8F0DQw3buwLwmgtv8Cwi30rLDflo3fmcm3wuUOxFbjd/uosKX/2tnWGCv6KweQaqNxdAMcqb6CqeaFQ==",
+  "dgSpecHash": "p5EbwHsXwuIIGp2rPYUZOje41d57E5/NwBVlDD2wJNcuXeGyRSHye7oSjzxP+Zf5wEg20XEfzPvSQFt4fHn20w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guest1\\Desktop\\E_SHOP_BOOK\\EShop.Service\\EShop.Service.csproj",
+  "projectFilePath": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK\\EShop.Service\\EShop.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guest1\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Guest1\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

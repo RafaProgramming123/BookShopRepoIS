@@ -10,17 +10,20 @@ using EShop.Repository;
 using EShop.Service.Interface;
 using EShop.Service.Implementation;
 using System.Security.Claims;
+using EShop.Service.implementation;
 
 namespace EShop.Web.Controllers
 {
     public class BooksController : Controller
     {
         private readonly IBookService bookService;
+        private readonly IAuthorService authorService;
         private readonly IShoppingCartService _shoppingCartService;
 
-        public BooksController(IBookService bookService,IShoppingCartService shoppingCartService)
+        public BooksController(IBookService bookService,IShoppingCartService shoppingCartService,IAuthorService authorService)
         {
             this.bookService = bookService;
+            this.authorService = authorService;
             _shoppingCartService = shoppingCartService;
         }
 
@@ -52,6 +55,8 @@ namespace EShop.Web.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
+            var authors = authorService.GetAllAuthors(); 
+            ViewData["Authors"] = new SelectList(authors, "Id", "Name");
             return View();
         }
 
