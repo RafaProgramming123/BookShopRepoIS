@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model WebApplication1.Models.Order
+
+<div class="container">
+    <div class="row">
+        <h2>Order Details</h2>
+        <hr />
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Customer Details</h4>
+            <p><strong>First Name:</strong> @Model.User?.FirstName</p>
+            <p><strong>Last Name:</strong> @Model.User?.LastName</p>
+            <p><strong>Address:</strong> @Model.User?.Address</p>
+        </div>
+        <div class="col-md-6">
+            <h4>Order Summary</h4>
+            <p><strong>Total Products:</strong> @Model.bookInOrders?.Count()</p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <h4>Products in Order</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.bookInOrders?.Count(); i++)
+                {
+                    var item = Model.bookInOrders.ElementAt(i);
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@item.Book?.Title</td>
+                        <td>@item.Quantity</td>
+                        <td>$@item.Book?.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row mt-4">
+        <a asp-controller="Order" asp-action="Index" class="btn btn-primary">Back to Orders</a>
+    </div>
+</div>
