@@ -11,6 +11,7 @@ using GemBox.Document;
 using QuestPDF.Fluent;
 namespace WebApplication1.Controllers;
 
+using ClosedXML.Excel;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
@@ -112,6 +113,81 @@ using QuestPDF.Infrastructure;
         document.Save(stream, new PdfSaveOptions());
         return File(stream.ToArray(), new PdfSaveOptions().ContentType, $"Invoice_{result.Id}.pdf");
     }
+
+
+
+
+
+    [HttpGet]
+    public FileContentResult ExportAllOrders()
+    {
+     
+        string fileName = "Orders.xlsx";
+        string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+        using (var workbook = new XLWorkbook())
+        {
+            
+            IXLWorksheet worksheet = workbook.Worksheets.Add("Orders");
+
+    
+            worksheet.Cell(1, 1).Value = "OrderID";
+            worksheet.Cell(1, 2).Value = "Customer Name";
+            worksheet.Cell(1, 3).Value = "Total Price";
+
+      
+            HttpClient client = new HttpClient();
+            string URL = "http://localhost:5054/api/AdminApp/GetAllOrders";
+
+            HttpResponseMessage response = client.GetAsync(URL).Result;
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Failed to retrieve orders.");
+            }
+
+            
+            var data = response.Content.ReadAsAsync<List<Order>>().Result;
+
+            for (int i = 0; i < data.Count; i++)
+            {
+                var order = data[i];
+                worksheet.Cell(i + 2, 1).Value = order.Id.ToString();
+                worksheet.Cell(i + 2, 2).Value = $"{order.User.FirstName} {order.User.LastName}";
+
+            
+                decimal total = 0;
+
+               
+                for (int j = 0; j < order.bookInOrders.Count; j++)
+                {
+                    var bookInOrder = order.bookInOrders.ElementAt(j);
+                    var book = bookInOrder.Book;
+
+                
+                    worksheet.Cell(1, 4 + j).Value = $"Book - {j + 1}";
+
+              
+                    worksheet.Cell(i + 2, 4 + j).Value = book.Title;
+
+                   
+                    total += bookInOrder.Quantity * (decimal)book.Price;
+                }
+
+              
+                worksheet.Cell(i + 2, 3).Value = total;
+            }
+
+            using (var stream = new MemoryStream())
+            {
+                workbook.SaveAs(stream);
+                var content = stream.ToArray();
+
+                return File(content, contentType, fileName);
+            }
+        }
+    }
+
 
 
 
