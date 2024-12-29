@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit.Cryptography;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace EShop.Web.Controllers.API
 {
@@ -33,6 +35,11 @@ namespace EShop.Web.Controllers.API
         {
             return this.orderService.GetDetailsForOrder(id);
         }
+
+
+
+      
+
 
 
 
