@@ -98,3 +98,4 @@ C:\Users\Guest1\Desktop\FINLA_IS_PROJECT\E_SHOP_BOOK_ADMIN\WebApplication1\WebAp
 C:\Users\Guest1\Desktop\FINLA_IS_PROJECT\E_SHOP_BOOK_ADMIN\WebApplication1\WebApplication1\bin\Debug\net8.0\ExcelNumberFormat.dll
 C:\Users\Guest1\Desktop\FINLA_IS_PROJECT\E_SHOP_BOOK_ADMIN\WebApplication1\WebApplication1\bin\Debug\net8.0\RBush.dll
 C:\Users\Guest1\Desktop\FINLA_IS_PROJECT\E_SHOP_BOOK_ADMIN\WebApplication1\WebApplication1\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\Guest1\Desktop\FINLA_IS_PROJECT\E_SHOP_BOOK_ADMIN\WebApplication1\WebApplication1\bin\Debug\net8.0\ExcelDataReader.dll

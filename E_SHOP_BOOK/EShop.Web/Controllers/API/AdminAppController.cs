@@ -1,4 +1,5 @@
 ﻿using EShop.Domain.Domain;
+using EShop.Domain.DTO;
 using EShop.Domain.Identity;
 using EShop.Service.Interface;
 using Microsoft.AspNetCore.Http;
@@ -38,7 +39,47 @@ namespace EShop.Web.Controllers.API
 
 
 
-      
+        [HttpPost("[action]")]
+        public async Task<bool> ImportAllUsers(List<UserRegistraionDto> model)
+        {
+            bool status = true;
+
+            foreach (var item in model)
+            {
+                try
+                {
+                    var user = new EShopApplicationUser
+                    {
+                        UserName = item.Email,
+                        NormalizedUserName = item.Email.ToUpper(),
+                        Email = item.Email,
+                        EmailConfirmed = true,
+                        ShoppingCart = new ShoppingCart()
+                    };
+
+                    var result = await userManager.CreateAsync(user, item.Password);
+
+                    if (!result.Succeeded)
+                    {
+                        status = false;
+                       
+                        foreach (var error in result.Errors)
+                        {
+                            Console.WriteLine($"Error: {error.Description}");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    status = false;
+                
+                    Console.WriteLine($"Exception: {ex.Message}");
+                }
+            }
+
+            return status;
+        }
+
 
 
 

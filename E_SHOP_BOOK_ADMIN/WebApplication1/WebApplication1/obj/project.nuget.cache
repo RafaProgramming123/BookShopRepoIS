@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Q/pwbK07Rr7+XTZTDgYfnFOFxRklG8avsW07ZDOCgENtgvk4z+YfY4xyUqjABEb8u7T8yp/rXnkazwllaajjag==",
+  "dgSpecHash": "erQ9Tkm4vu/Vte+HrF/V/eHcOBvOjArbh2j4/aghO6UULifV0cP9w5c4GCs1PUHsOB+4KNy4yjIJS/K0nolLhw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Guest1\\Desktop\\FINLA_IS_PROJECT\\E_SHOP_BOOK_ADMIN\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Guest1\\.nuget\\packages\\closedxml.parser\\1.2.0\\closedxml.parser.1.2.0.nupkg.sha512",
     "C:\\Users\\Guest1\\.nuget\\packages\\documentformat.openxml\\3.1.1\\documentformat.openxml.3.1.1.nupkg.sha512",
     "C:\\Users\\Guest1\\.nuget\\packages\\documentformat.openxml.framework\\3.1.1\\documentformat.openxml.framework.3.1.1.nupkg.sha512",
+    "C:\\Users\\Guest1\\.nuget\\packages\\exceldatareader\\3.7.0\\exceldatareader.3.7.0.nupkg.sha512",
     "C:\\Users\\Guest1\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
     "C:\\Users\\Guest1\\.nuget\\packages\\gembox.document\\35.0.1946\\gembox.document.35.0.1946.nupkg.sha512",
     "C:\\Users\\Guest1\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",

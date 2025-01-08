@@ -12,11 +12,12 @@ using QuestPDF.Fluent;
 namespace WebApplication1.Controllers;
 
 using ClosedXML.Excel;
+using Microsoft.AspNetCore.Authorization;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-
-    public class OrderController : Controller
+[Authorize]
+public class OrderController : Controller
 {
 
     private readonly IHostEnvironment _hostEnvironment;
