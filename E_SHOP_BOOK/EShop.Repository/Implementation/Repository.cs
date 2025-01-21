@@ -25,6 +25,13 @@ namespace EShop.Repository.Implementation
             return entities.AsEnumerable();
         }
 
+        public Book GetBookWithAuthor(Guid? id)
+        {
+            return context.Books
+                .Include(b => b.Author) // Include the Author
+                .SingleOrDefault(b => b.Id == id);
+        }
+
         public T Get(Guid? id)
         {
             return entities.SingleOrDefault(s => s.Id == id);

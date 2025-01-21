@@ -10,6 +10,7 @@ namespace EShop.Repository.Interface
     public interface IRepository<T> where T : BaseEntity
     {
         IEnumerable<T> GetAll();
+        Book GetBookWithAuthor(Guid? id);
         T Get(Guid? id);
         void Insert(T entity);
         void Update(T entity);

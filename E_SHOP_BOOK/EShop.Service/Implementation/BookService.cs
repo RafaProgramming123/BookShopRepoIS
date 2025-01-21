@@ -36,8 +36,7 @@ namespace EShop.Service.implementation
 
         public Book GetDetailsForBook(Guid? id)
         {
-            var b= _bookRepository.Get(id);
-            return b;
+            return _bookRepository.GetBookWithAuthor(id);
         }
 
         public void UpdateExistingBook(Book b)

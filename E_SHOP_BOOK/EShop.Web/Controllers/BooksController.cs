@@ -84,15 +84,20 @@ namespace EShop.Web.Controllers
             {
                 return NotFound();
             }
-             var book=bookService.GetDetailsForBook(id);
-           
+
+            var book = bookService.GetDetailsForBook(id);
+
             if (book == null)
             {
                 return NotFound();
             }
-          
+
+            // Populate authors for the dropdown
+            ViewBag.AuthorId = new SelectList(authorService.GetAllAuthors(), "Id", "Name", book.AuthorId);
+
             return View(book);
         }
+
 
         // POST: Books/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.

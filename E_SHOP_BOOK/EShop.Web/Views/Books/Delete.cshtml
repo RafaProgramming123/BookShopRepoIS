@@ -1,4 +1,4 @@
-﻿@model EShop.Domain.Domain.Book
+﻿@* @model EShop.Domain.Domain.Book
 
 @{
     ViewData["Title"] = "Delete";
@@ -60,4 +60,54 @@
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
+</div>
+ *@
+
+            @model EShop.Domain.Domain.Book
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center text-danger display-4">⚠️ Delete Book</h1>
+
+    <div class="alert alert-warning text-center" role="alert">
+        <h3 class="mb-3">Are you sure you want to delete this book?</h3>
+        <p class="mb-0">This action cannot be undone.</p>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded">
+        <div class="card-body">
+            <h4 class="card-title text-dark fw-bold mb-4">@Model.Title</h4>
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary fw-bold">Description:</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Price:</dt>
+                <dd class="col-sm-8 text-success">$@Model.Price</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Rating:</dt>
+                <dd class="col-sm-8 text-warning">⭐ @Model.Rating</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Genre:</dt>
+                <dd class="col-sm-8">@Model.Genre</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Image URL:</dt>
+                <dd class="col-sm-8">
+                    <a href="@Model.Image" target="_blank" class="text-decoration-none">@Model.Image</a>
+                </dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Author:</dt>
+                <dd class="col-sm-8">@Model.Author?.Name</dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light text-center">
+            <form asp-action="Delete" class="d-inline">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger shadow-sm me-2">❌ Delete</button>
+            </form>
+            <a asp-action="Index" class="btn btn-secondary shadow-sm">🔙 Back to List</a>
+        </div>
+    </div>
 </div>

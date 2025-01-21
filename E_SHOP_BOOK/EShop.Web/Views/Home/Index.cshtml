@@ -2,7 +2,41 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Left Content -->
+        <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-3 fw-bold text-primary">Welcome to EShop!</h1>
+            <p class="lead text-secondary mt-3">
+                Discover an extensive collection of books, from timeless classics to modern bestsellers.
+                Enhance your reading experience and shop with ease using our simple and intuitive platform.
+            </p>
+            <a href="/Books" class="btn btn-primary btn-lg shadow-sm mt-3">📚 Browse Books</a>
+        </div>
+
+        <!-- Right Image -->
+        <div class="col-lg-6 text-center">
+            <img src="https://img.freepik.com/free-photo/public-examination-preparation-concept_23-2149369845.jpg?semt=ais_hybrid" alt="Books and Library" class="img-fluid rounded shadow-lg" />
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5">
+        <h2 class="text-center fw-bold text-secondary mb-4">Why Choose EShop?</h2>
+        <div class="col-md-4 text-center">
+            <i class="bi bi-book-fill text-primary display-3"></i>
+            <h4 class="fw-bold mt-3">Wide Selection</h4>
+            <p class="text-secondary">Explore thousands of books across various genres and categories.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="bi bi-cart-fill text-success display-3"></i>
+            <h4 class="fw-bold mt-3">Easy Shopping</h4>
+            <p class="text-secondary">Effortlessly add books to your shopping cart and manage orders.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="bi bi-star-fill text-warning display-3"></i>
+            <h4 class="fw-bold mt-3">Top Ratings</h4>
+            <p class="text-secondary">Read reviews and ratings to pick your next great read.</p>
+        </div>
+    </div>
 </div>

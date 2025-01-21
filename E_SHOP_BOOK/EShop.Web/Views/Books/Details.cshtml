@@ -1,4 +1,4 @@
-﻿@model EShop.Domain.Domain.Book
+﻿@* @model EShop.Domain.Domain.Book
 
 @{
     ViewData["Title"] = "Details";
@@ -47,14 +47,57 @@
             @Html.DisplayFor(model => model.Image)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
+            @Html.DisplayNameFor(model => model.Author.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author.Id)
+            @Html.DisplayFor(model => model.Author.Name)
         </dd>
     </dl>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+</div>
+ *@
+ @model EShop.Domain.Domain.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center text-primary display-4">📖 Book Details</h1>
+
+    <div class="card shadow-lg border-0 rounded">
+        <div class="card-body">
+            <h4 class="card-title text-dark fw-bold mb-4">@Model.Title</h4>
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary fw-bold">Description:</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Price:</dt>
+                <dd class="col-sm-8 text-success">$@Model.Price</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Rating:</dt>
+                <dd class="col-sm-8 text-warning">⭐ @Model.Rating</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Genre:</dt>
+                <dd class="col-sm-8">@Model.Genre</dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Image URL:</dt>
+                <dd class="col-sm-8"><a href="@Model.Image" target="_blank" class="text-decoration-none">@Model.Image</a></dd>
+
+                <dt class="col-sm-4 text-secondary fw-bold">Author:</dt>
+                <dd class="col-sm-8">@Model.Author?.Name</dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light d-flex justify-content-between">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning shadow-sm">
+                ✏️ Edit
+            </a>
+            <a asp-action="Index" class="btn btn-secondary shadow-sm">
+                🔙 Back to List
+            </a>
+        </div>
+    </div>
 </div>

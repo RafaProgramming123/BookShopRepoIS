@@ -72,44 +72,56 @@
 </table>
  *@
 
- @model IEnumerable<EShop.Domain.Domain.Book>
+@model IEnumerable<EShop.Domain.Domain.Book>
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <div class="container mt-5">
-    <h1 class="mb-4 text-center text-primary">📚 Explore Our Book Collection</h1>
+    <h1 class="mb-4 text-center text-primary display-4">📚 Explore Our Book Collection</h1>
 
-    <div class="mb-3 text-end">
-        <a asp-action="Create" class="btn btn-success btn-lg">➕ Add a New Book</a>
+    <div class="mb-4 d-flex justify-content-end">
+        <a asp-action="Create" class="btn btn-primary btn-lg shadow-sm">
+            <i class="bi bi-plus-circle"></i> Add a New Book
+        </a>
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         @foreach (var item in Model)
         {
             <div class="col">
-                <div class="card h-100 shadow-lg border-0">
-                    <a href="@item.Image" target="_blank">
-                        <img src="@item.Image" class="card-img-top" alt="@item.Title" style="height: 250px; object-fit: cover; border-radius: 8px;">
+                <div class="card h-100 border-0 shadow-sm rounded">
+                    <a href="@item.Image" target="_blank" class="text-decoration-none">
+                        <img src="@item.Image" class="card-img-top rounded-top" alt="@item.Title" style="height: 250px; object-fit: cover;">
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title text-dark">@item.Title</h5>
-                        <p class="card-text text-secondary small">@item.Description</p>
-                        <p class="card-text mb-1"><strong>Price:</strong> <span class="text-success">$@item.Price</span></p>
-                        <p class="card-text mb-1"><strong>Rating:</strong> ⭐ @item.Rating</p>
-                        <p class="card-text mb-1"><strong>Genre:</strong> @item.Genre</p>
-          
+                        <h5 class="card-title text-dark fw-bold">@item.Title</h5>
+                        <p class="card-text text-secondary small text-truncate">@item.Description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-text text-success fw-bold mb-0">$@item.Price</p>
+                            <p class="card-text text-warning mb-0">⭐ @item.Rating</p>
+                        </div>
+                        <p class="card-text text-muted small"><em>@item.Genre</em></p>
                     </div>
                     <div class="card-footer bg-light text-center">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm mx-1">✏️ Edit</a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm mx-1">ℹ️ Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm mx-1">❌ Delete</a>
-                        <a asp-controller="Books" asp-action="AddToCart" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm mx-1">🛒 Add to Cart</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm shadow-sm me-2">
+                            ✏️ Edit
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm shadow-sm me-2">
+                            ℹ️ Details
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm shadow-sm me-2">
+                            ❌ Delete
+                        </a>
+                        <a asp-controller="Books" asp-action="AddToCart" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm shadow-sm">
+                            🛒 Add to Cart
+                        </a>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
+
 
