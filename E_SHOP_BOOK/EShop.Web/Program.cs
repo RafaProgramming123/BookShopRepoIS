@@ -6,6 +6,7 @@ using EShop.Service.implementation;
 using EShop.Repository.Implementation;
 using EShop.Repository.Interface;
 using EShop.Service.Implementation;
+using EShop.Domain.Domain;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,9 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
