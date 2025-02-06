@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EShop.Web.styles.css" asp-append-version="true" />
+    <link href="lib/bootstrap/dist/css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" rel="stylesheet" />
+    <link href="lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" rel="stylesheet" />
+    <link href="lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -36,6 +40,9 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="ShoppingCarts" asp-action="Index">Shopping Cart</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="PartnerData" asp-action="Index">Partner Events</a>
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -48,12 +55,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - BookShop.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

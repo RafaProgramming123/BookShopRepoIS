@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFNCSBpHd3USipJmRW/tozgAAAAACAAAAAAAQZgAAAAEAACAAAABlpT5U+nq4YXPhnhyTInFsMujuJ4koYqbmWv/XLaX30wAAAAAOgAAAAAIAACAAAADArGe8bj6uGFOd0IsXOU78qlj6pmaSJdSXaFzPf9v6K4AAAABPS8ZI7hPVHhwy5hy+TfQ9c9cnblU7uofdrc0K1WS59N0C6jC6NHiKCLSu67EYo4NIbnPJ3AJwjvxU3xJqjSO2AetnEEqkAonvTV9qNz/0sH4RCNCZq3FbTPcivEedrNRruGgTuYL6wI6qzGIXRwRxh1TGhEnPaVyjSMGlRx9RO0AAAABDwqQPRdKJr/6MW8uGpntNZ7evtaW+d7UrJS5/E/AHvvbY6wB2wEVqtCVDDRVnSmyKrcSgdZZYOt1b7+62Np9V</EncryptedPassword>
+    <History>True|2025-02-06T19:24:52.1590057Z;True|2025-02-03T17:46:49.1279456+01:00;False|2025-02-03T17:39:39.6732118+01:00;False|2025-02-03T17:37:18.7946606+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=bookshopdb.database.windows.net,1433%3bInitial Catalog=EShop.Web_db%3bUser ID=BookShopDB%3bPassword=Finkifakultet12345!</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="EShop.Repository.ApplicationDbContext">
+      <Value>Data Source=bookshopdb.database.windows.net,1433%3bInitial Catalog=EShop.Web_db%3bUser ID=BookShopDB%3bPassword=Finkifakultet12345!</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -18,11 +18,15 @@ namespace EShop.Web.Controllers.API
 
         private readonly IOrderService orderService;
         private readonly UserManager<EShopApplicationUser> userManager;
+        private readonly IBookService bookService;
+        private readonly IAuthorService authorService;
 
-        public AdminAppController(IOrderService orderService, UserManager<EShopApplicationUser> userManager)
+        public AdminAppController(IOrderService orderService,IAuthorService authorService,IBookService bookService ,UserManager<EShopApplicationUser> userManager)
         {
             this.orderService = orderService;
             this.userManager = userManager;
+            this.bookService = bookService;
+            this.authorService=authorService;
         }
 
 
@@ -36,6 +40,33 @@ namespace EShop.Web.Controllers.API
         {
             return this.orderService.GetDetailsForOrder(id);
         }
+
+        [HttpGet("[action]")]
+        public List<Book> getAllBooks()
+        {
+            return this.bookService.GetAllBooks();
+        }
+
+        [HttpGet("[action]")]
+        public List<Author> getAllAuthors()
+        {
+            return this.authorService.GetAllAuthors();  
+        }
+
+
+
+        [HttpGet("[action]")]
+        public Book getBookDetails(Guid id)
+        {
+            return this.bookService.GetDetailsForBook(id);
+        }
+
+        [HttpGet("[action]")]
+        public Author getDetailsForAuthor(Guid id)
+        {
+            return this.authorService.GetDetailsForAuthor(id);
+        }
+
 
 
 
